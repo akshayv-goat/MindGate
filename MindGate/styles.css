@@ -433,9 +433,20 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(3.4rem, 5vw, 5.4rem);
-  max-width: 12ch;
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  max-width: min(90vw, 60ch);
   letter-spacing: -0.04em;
+  overflow-wrap: break-word;
+}
+
+h2 {
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  letter-spacing: -0.03em;
+  overflow-wrap: break-word;
+}
+
+h3 {
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
 }
 
 .hero-highlight {
@@ -467,8 +478,8 @@ h3 {
 }
 
 .hero-description {
-  max-width: 44rem;
-  font-size: clamp(1.05rem, 1vw + 0.12rem, 1.32rem);
+  max-width: min(44rem, 90vw);
+  font-size: clamp(0.98rem, 1vw + 0.08rem, 1.2rem);
 }
 
 .hero-notes {
@@ -1092,13 +1103,26 @@ h3 {
 
 @media (max-width: 768px) {
   h1 {
-    font-size: clamp(2.5rem, 6vw, 3.5rem);
+    font-size: clamp(2.2rem, 6vw, 3rem);
+  }
+  h2 {
+    font-size: clamp(1.65rem, 3vw, 2.2rem);
+  }
+  .hero-copy {
+    max-width: 92vw;
+    margin: 0 auto;
   }
   .hero-visual-card {
     margin: 0 auto;
   }
   .hero-notes {
     grid-template-columns: 1fr;
+  }
+  .hero-notes span {
+    font-size: clamp(0.85rem, 1vw, 0.95rem);
+  }
+  .hero-description {
+    font-size: clamp(0.95rem, 1vw + 0.05rem, 1.1rem);
   }
   .how-steps {
     grid-template-columns: repeat(2, 1fr);
@@ -1107,7 +1131,7 @@ h3 {
     min-height: 240px;
   }
   .feature-card h3 {
-    font-size: clamp(1.2rem, 2.5vw, 1.35rem);
+    font-size: clamp(1.15rem, 2.3vw, 1.3rem);
   }
 }
 
