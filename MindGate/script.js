@@ -32,6 +32,21 @@ if (contactTriggers.length && contactModal) {
   });
 }
 
+const mobileToggle = document.getElementById('mobile-menu-toggle');
+const navLinks = document.getElementById('nav-links');
+
+if (mobileToggle && navLinks) {
+  mobileToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+  navLinks.addEventListener('click', (e) => {
+    if (e.target.tagName === 'A' || e.target.classList.contains('contact-btn')) {
+      navLinks.classList.remove('open');
+    }
+  });
+}
+
   // Smooth in-page navigation and hash normalization
   document.addEventListener('click', (e) => {
     const el = e.target.closest && e.target.closest('a[href^="#"]');
