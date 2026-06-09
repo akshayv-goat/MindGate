@@ -319,16 +319,16 @@ body::before {
 .hero {
   display: grid;
   grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
-  gap: 54px;
+  gap: clamp(32px, 6vw, 54px);
   align-items: center;
-  min-height: calc(100vh - 98px);
-  padding: 48px 0 72px;
+  min-height: clamp(60vh, calc(100vh - 98px), calc(100vh - 98px));
+  padding: clamp(32px, 6vw, 48px) 0 clamp(48px, 8vw, 72px);
 }
 
 .hero-copy {
   max-width: 680px;
   display: grid;
-  gap: 28px;
+  gap: clamp(20px, 3vw, 28px);
   text-align: left;
 }
 
@@ -380,9 +380,9 @@ body::before {
   display: grid;
   justify-items: center;
   text-align: center;
-  gap: 28px;
-  margin-top: 72px;
-  padding-bottom: 16px;
+  gap: clamp(20px, 3vw, 28px);
+  margin-top: clamp(48px, 8vw, 72px);
+  padding-bottom: clamp(12px, 2vw, 16px);
 }
 
 .feature-showcase .section-header {
@@ -409,9 +409,9 @@ body::before {
 .content-wrap {
   position: relative;
   z-index: 3;
-  width: min(1180px, calc(100% - 48px));
+  width: min(1180px, calc(100% - clamp(24px, 4vw, 48px)));
   margin: 0 auto;
-  padding: 56px 0 120px;
+  padding: clamp(32px, 6vw, 56px) 0 clamp(72px, 12vw, 120px);
 }
 
 .eyebrow,
@@ -473,9 +473,9 @@ h3 {
 
 .hero-notes {
   display: grid;
-  grid-template-columns: repeat(3, minmax(180px, 1fr));
-  gap: 16px;
-  margin: 34px 0 0;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: clamp(12px, 2vw, 16px);
+  margin: clamp(24px, 4vw, 34px) 0 0;
 }
 
 .hero-notes span {
@@ -498,15 +498,16 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 22px 30px;
-  gap: 24px;
-  margin: 0 0 36px;
+  padding: clamp(16px, 3vw, 22px) clamp(18px, 3vw, 30px);
+  gap: clamp(16px, 3vw, 24px);
+  margin: 0 0 clamp(24px, 4vw, 36px);
   background: rgba(6, 20, 36, 0.36);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: 34px;
   backdrop-filter: blur(24px);
   box-shadow: 0 32px 80px rgba(0, 0, 0, 0.18);
   overflow: hidden;
+  flex-wrap: wrap;
 }
 
 .site-nav::before {
@@ -530,8 +531,8 @@ h3 {
 .nav-logo {
   display: inline-flex;
   align-items: center;
-  gap: 14px;
-  font-size: 1.16rem;
+  gap: clamp(8px, 1.5vw, 14px);
+  font-size: clamp(0.9rem, 1.2vw, 1.16rem);
   font-weight: 700;
   color: var(--accent-strong);
   text-decoration: none;
@@ -542,12 +543,13 @@ h3 {
 
 .nav-links {
   display: flex;
-  gap: 16px;
+  gap: clamp(12px, 2vw, 16px);
   flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .logo-img {
-  height: 62px;
+  height: clamp(44px, 7vw, 62px);
   width: auto;
   display: inline-block;
   opacity: 0.95;
@@ -555,7 +557,7 @@ h3 {
   filter: brightness(1.02) saturate(1.08);
   background: rgba(255, 255, 255, 0.08);
   border-radius: 20px;
-  padding: 8px;
+  padding: clamp(4px, 1vw, 8px);
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08), 0 10px 24px rgba(0, 0, 0, 0.14);
 }
 
@@ -685,23 +687,21 @@ h3 {
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 18px;
-  margin-top: 34px;
-}
-
-.hero-actions {
-  justify-content: center;
+  gap: clamp(12px, 2vw, 18px);
+  margin-top: clamp(24px, 4vw, 34px);
+  justify-content: flex-start;
 }
 
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-height: 56px;
-  padding: 0 34px;
+  min-height: clamp(44px, 8vw, 56px);
+  padding: 0 clamp(24px, 4vw, 34px);
   border-radius: 999px;
   font-weight: 700;
   text-decoration: none;
+  font-size: clamp(0.9rem, 1vw, 1rem);
   transition: transform 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease, color 0.22s ease;
 }
 
@@ -730,13 +730,13 @@ h3 {
 }
 
 .phone-card {
-  width: min(100%, 520px);
+  width: min(100%, clamp(320px, 90vw, 520px));
   background: radial-gradient(circle at top, rgba(23, 56, 96, 0.98), rgba(8, 18, 35, 0.92));
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 44px;
   backdrop-filter: blur(22px);
   box-shadow: 0 44px 120px rgba(0, 0, 0, 0.26);
-  padding: 28px;
+  padding: clamp(20px, 3vw, 28px);
 }
 
 .phone-screen {
