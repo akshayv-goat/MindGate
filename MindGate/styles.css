@@ -499,6 +499,37 @@ h3 {
   font-size: clamp(0.98rem, 1vw + 0.08rem, 1.2rem);
 }
 
+.ocean-cta-bottom {
+  margin: 0 auto;
+  padding: clamp(40px, 6vw, 64px) 0;
+  max-width: min(72rem, 92vw);
+  font-size: clamp(2.8rem, 5.2vw, 4.4rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 24px 40px rgba(0, 0, 0, 0.32);
+}
+
+.ocean-cta-emphasis {
+  color: var(--accent);
+  text-shadow: 0 0 32px rgba(185, 120, 255, 0.8), 0 18px 30px rgba(120, 70, 255, 0.18);
+}
+
+.ocean-hero-bottom {
+  background: transparent;
+  border-top: none;
+  backdrop-filter: none;
+  box-shadow: none;
+}
+
+.ocean-hero-bottom-inner {
+  display: grid;
+  justify-items: center;
+  padding: clamp(32px, 4vw, 48px) 0;
+}
+
 .hero-notes {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
