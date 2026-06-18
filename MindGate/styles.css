@@ -776,6 +776,64 @@ h3 {
   width: 100%;
 }
 
+.hero-signup {
+  display: grid;
+  gap: clamp(12px, 2vw, 16px);
+  margin-top: clamp(26px, 3vw, 36px);
+  width: min(100%, 720px);
+}
+
+.hero-signup-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.85rem;
+  width: 100%;
+}
+
+.hero-signup input {
+  width: 100%;
+  min-width: 0;
+  padding: clamp(14px, 1.5vw, 18px) clamp(16px, 2vw, 20px);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-size: clamp(0.95rem, 1vw, 1rem);
+  outline: none;
+}
+
+.hero-signup input:focus {
+  border-color: rgba(185, 120, 255, 0.95);
+  box-shadow: 0 0 0 4px rgba(185, 120, 255, 0.14);
+}
+
+.form-feedback {
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 0.98rem;
+  min-height: 1.3em;
+  max-width: 100%;
+  text-align: center;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 720px) {
+  .hero-signup-fields {
+    grid-template-columns: 1fr;
+  }
+}
+
 .button {
   display: inline-flex;
   align-items: center;

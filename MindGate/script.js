@@ -101,3 +101,26 @@ if (mobileToggle && navLinks) {
       }
     }
   });
+
+const earlyAccessForm = document.getElementById('early-access-form');
+const emailInput = document.getElementById('early-email');
+const formFeedback = document.getElementById('form-feedback');
+
+if (earlyAccessForm && emailInput && formFeedback) {
+  earlyAccessForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const email = emailInput.value.trim();
+    const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!email || !validEmail.test(email)) {
+      formFeedback.textContent = 'Enter a valid email to join the waitlist.';
+      formFeedback.style.color = 'var(--accent)';
+      emailInput.focus();
+      return;
+    }
+
+    formFeedback.textContent = 'Thanks! You’ll be the first to hear when early access opens.';
+    formFeedback.style.color = '#b7d4ff';
+    emailInput.value = '';
+  });
+}
